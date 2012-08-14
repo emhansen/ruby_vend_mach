@@ -9,11 +9,7 @@ module ChangeMaker
       |currency, number|
       number_needed = ((needed / currency.value) + 0.001).to_i
 
-      if number >= number_needed
-        number_used = number_needed
-      else
-        number_used = number
-      end
+      number_used = [number_needed, number].min()
 
       change[currency] = number_used
       bank[currency] = number - number_used

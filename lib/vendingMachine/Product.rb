@@ -4,7 +4,7 @@ class Product
     @name = name
     @price = price
   end
-    
+
   COKE = Product.new("Coca Cola", 1.25)
   DIET_COKE = Product.new("Diet Coke", 1.25)
   SPRITE = Product.new("Sprite", 1.25)
