@@ -40,10 +40,10 @@ class VendingMachineTest < Test::Unit::TestCase
     vms.stock(Currency::DIME, 20)
     vms.stock(Currency::PENNY, 1)
     
-    assert_equal(100, vms.currency_count(Currency::QUARTER))
-    assert_equal(50, vms.currency_count(Currency::NICKEL))
-    assert_equal(20, vms.currency_count(Currency::DIME))
-    assert_equal(0, vms.currency_count(Currency::PENNY))
+    assert_equal(100, vms.bank_currency_count(Currency::QUARTER))
+    assert_equal(50, vms.bank_currency_count(Currency::NICKEL))
+    assert_equal(20, vms.bank_currency_count(Currency::DIME))
+    assert_equal(0, vms.bank_currency_count(Currency::PENNY))
   end
   
   def test_stock

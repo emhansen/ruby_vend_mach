@@ -47,8 +47,7 @@ class VendingMachine
     @bankMoney[currency]+=number
   end
 
-  def currency_count(currency)
-    @bankMoney.keys()
+  def bank_currency_count(currency)
     @bankMoney[currency]
   end
 
