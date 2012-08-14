@@ -4,7 +4,6 @@ require 'vendingMachine/Currency'
 
 class ChangeMakerTest < Test::Unit::TestCase
   include ChangeMaker
-  
   def test_zero
     bank = Hash.new(0)
     bank[Currency::QUARTER] = 1
@@ -90,6 +89,19 @@ class ChangeMakerTest < Test::Unit::TestCase
     assert_equal(2,change[Currency::DIME])
     assert_equal(0,bank[Currency::NICKEL])
     assert_equal(0,bank[Currency::DIME])
+  end
+
+  def test155
+    bank = Hash.new(0)
+    bank[Currency::NICKEL] = 100
+    bank[Currency::DIME] = 100
+    bank[Currency::QUARTER] = 100
+
+    change = make_change(1.55, bank)
+    assert_equal(6,change[Currency::QUARTER])
+    assert_equal(0,change[Currency::DIME])
+    assert_equal(1,change[Currency::NICKEL])
+
   end
 
 end
